@@ -35,7 +35,7 @@ endf
 let makefile=SetMkfile()
 
 if !empty(findfile('tags', '.;'))
-	autocmd BufWritePost *.cpp,*.h,*.c execute 'silent !make -f '.makefile.' tags &'
+	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h execute 'silent !make -f '.makefile.' tags &'
 endif
 
 for s:c in ['a', 'A', '<Insert>', 'i', 'I', 'gI', 'gi', 'o', 'O']
@@ -61,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 autocmd VimEnter * call SetupLightlineColors()
