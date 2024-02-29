@@ -1,4 +1,5 @@
 {
+  "inlayHint.enable": "false",
   "explorer.width": 50,
   "explorer.icon.source": "vim-devicons",
   "explorer.file.showHiddenFiles": false,
