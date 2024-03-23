@@ -1,4 +1,5 @@
-"coc-clangd //works best whit clangd3 and universal-ctags
+"coc-clangd //universal-ctags recommended, working whit makefile that sinergyces whit this config recommended
+"coc-flutter
 "coc-explorer
 "coc-highlight
 "coc-prettier
