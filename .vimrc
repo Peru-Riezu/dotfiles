@@ -1,4 +1,4 @@
-"coc-clangd //works best whit clangd-13 and ctags
+"coc-clangd //works best whit clangd3 and universal-ctags
 "coc-explorer
 "coc-highlight
 "coc-prettier
@@ -114,6 +114,9 @@ function! MyLineInfo()
 	let lineinfo = '%3l:%-2v'
 	return winwidth(0) > 60 ? lineinfo : ''
 endfunction
+
+autocmd ColorScheme *
+    \ hi CocUnusedHighlight cterm=underline gui=underline guifg=#808080
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -288,6 +291,11 @@ nmap <space>e <Cmd>CocCommand explorer --quit-on-open<CR>
 nmap <space>f :vimgrep /FIX\\|TODO\\|BUG\\|fix\\|todo\\|bug/ **/*.c \| copen <CR>
 nmap <space>d g<C-]>
 nmap <space>D :execute 'tab tag '.expand('<cword>')<CR>
+nmap <silent><space>ca <Plug>(coc-codelens-action)
+vmap <silent><space>a  <Plug>(coc-codeaction-selected)
+nmap <silent><space>a  <Plug>(coc-codeaction)
 
 autocmd BufWinEnter *.cpp execute 'silent !cp ~/.vim/coc-settings-cpp.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 autocmd BufWinEnter *.c execute 'silent !cp ~/.vim/coc-settings-c.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
+
+hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2 

@@ -63,7 +63,7 @@ function! s:line(n)
 		return s:textline("Created:  " . s:date(), '')
 	elseif a:n == 9 " updated
 		return s:textline("Updated:  " . s:date(), '')
-	elseif a:n == 12 || a:n == 21 " newline
+	elseif a:n == 12 || a:n == 28 " newline
 		return ""
 	elseif a:n == 13 " semi
 		return ";"
@@ -80,8 +80,22 @@ function! s:line(n)
 	elseif a:n == 19 " pragma
 		return "#pragma GCC diagnostic ignored \"-Wextra-semi\""
 	elseif a:n == 20 " pragma
-		return ";"
+		return "#pragma GCC diagnostic ignored \"-Wunsafe-buffer-usage\""
+	elseif a:n == 21 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wc++98-compat\""
 	elseif a:n == 22 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wwritable-strings\""
+	elseif a:n == 23 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wlanguage-extension-token\""
+	elseif a:n == 24 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wpre-c++20-compat-pedantic\""
+	elseif a:n == 25 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wc++20-designator\""
+	elseif a:n == 26 " pragma
+		return "#pragma GCC diagnostic ignored \"-Wc++98-compat-extra-semi\""
+	elseif a:n == 27 " pragma
+		return ";"
+	elseif a:n == 29 " pragma
 		return "#pragma GCC diagnostic pop"
 	endif
 endfunction
@@ -115,7 +129,7 @@ function! s:date()
 endfunction
 
 function! s:insert()
-	let l:line = 22
+	let l:line = 29
 
 	" empty line after header
 	"call append(0, "")

@@ -3,9 +3,10 @@
     "coc-explorer": ">=0.25.0",
     "coc-clangd": ">=0.26.2",
     "coc-highlight": ">=2.0.4",
-    "coc-prettier": ">=9.3.1"
+    "coc-prettier": ">=9.3.1",
+    "coc-flutter": ">=1.9.10"
   },
   "disabled": [],
   "locked": [],
-  "lastUpdate": 1682868430361
+  "lastUpdate": 1709592256183
 }

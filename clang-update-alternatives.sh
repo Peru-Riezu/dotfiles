@@ -1,5 +1,5 @@
 #apt remove llvm-* clang-* clangd-* clang-format-* clang-tidy-* lldb-*
-#apt install llvm-16 clang-16 clangd-16 clang-format-16 clang-tidy-16 lldb-16
+#apt install llvm-16 clang-16 clangd-16 clang-format-16 clang-tidy-16 lldb-16 clang-tools-16
 
 update-alternatives --install \
         /usr/bin/llvm-config           llvm-config           /usr/bin/llvm-config-16 300
@@ -71,3 +71,5 @@ update-alternatives --install \
         /usr/bin/lldb                  lldb                  /usr/bin/lldb-16 300
 update-alternatives --install \
         /usr/bin/lldb-server           lldb-server           /usr/bin/lldb-server-16 300
+update-alternatives --install \
+        /usr/bin/scan-build            scan-build           /usr/bin/scan-build-16 300
