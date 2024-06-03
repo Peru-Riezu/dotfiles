@@ -1,5 +1,4 @@
-"coc-clangd //universal-ctags recommended, working whit makefile that sinergyces whit this config recommended
-"coc-flutter
+"coc-clangd //works best whit clangd3 and universal-ctags
 "coc-explorer
 "coc-highlight
 "coc-prettier
@@ -23,7 +22,7 @@ fun! SetMkfile()
   let filemk = "Makefile"
   let pathmk = "./"
   let depth = 1
-  while depth < 4
+  while depth < 20
     if filereadable(pathmk . filemk)
       return pathmk.filemk
     endif
@@ -35,8 +34,24 @@ endf
 
 let makefile=SetMkfile()
 
+fun! SetMkpath()
+  let filemk = "Makefile"
+  let pathmk = "./"
+  let depth = 1
+  while depth < 20
+    if filereadable(pathmk . filemk)
+      return pathmk
+    endif
+    let depth += 1
+    let pathmk = "../" . pathmk
+  endwhile
+  return "."
+endf
+
+let makepath=SetMkpath()
+
 if !empty(findfile('tags', '.;'))
-	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h execute 'silent !make -f '.makefile.' tags &'
+	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h execute 'silent !make --no-print-directory -C '.makepath.' tags &'
 endif
 
 for s:c in ['a', 'A', '<Insert>', 'i', 'I', 'gI', 'gi', 'o', 'O']
