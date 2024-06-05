@@ -3,6 +3,7 @@
 "coc-highlight
 "coc-prettier
 
+set autochdir
 set undofile
 set encoding=UTF-8
 set nocompatible
@@ -74,6 +75,7 @@ hi CocFloatThumb ctermbg=grey
 hi CocFloatSbar  ctermbg=white
 
 call plug#begin('~/.vim/plugged')
+Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -314,4 +316,4 @@ nmap <silent><space>a  <Plug>(coc-codeaction)
 autocmd BufWinEnter *.cpp execute 'silent !cp ~/.vim/coc-settings-cpp.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 autocmd BufWinEnter *.c execute 'silent !cp ~/.vim/coc-settings-c.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 
-hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2 
+hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2
