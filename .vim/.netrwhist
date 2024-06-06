@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/priezu-m/webserver/src/config/t_c_individual_server_config'
+let g:netrw_dirhist_7='/home/priezu-m/webserver/src/config'
+let g:netrw_dirhist_6='/home/priezu-m/webserver/src'
+let g:netrw_dirhist_5='/home/priezu-m/webserver/src/config/parser/get_token_value/get_router'
+let g:netrw_dirhist_4='/home/priezu-m/webserver/example_configs'
+let g:netrw_dirhist_3='/home/priezu-m/webserver/src/config/t_c_global_config'
+let g:netrw_dirhist_2='/home/priezu-m/webserver/src/io'
 let g:netrw_dirhist_1='/home/user/mbz'
