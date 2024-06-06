@@ -19,23 +19,7 @@ set shiftwidth=4
 set wildignore=*.pdf,*.swp
 set tags=tags;/
 
-fun! SetMkfile()
-  let filemk = "Makefile"
-  let pathmk = "./"
-  let depth = 1
-  while depth < 20
-    if filereadable(pathmk . filemk)
-      return pathmk.filemk
-    endif
-    let depth += 1
-    let pathmk = "../" . pathmk
-  endwhile
-  return "."
-endf
-
-let makefile=SetMkfile()
-
-fun! SetMkpath()
+function SetMkpath()
   let filemk = "Makefile"
   let pathmk = "./"
   let depth = 1
@@ -49,10 +33,8 @@ fun! SetMkpath()
   return "."
 endf
 
-let makepath=SetMkpath()
-
 if !empty(findfile('tags', '.;'))
-	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h execute 'silent !make --no-print-directory -C '.makepath.' tags &'
+	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h let makepath=SetMkpath() | execute 'silent !make --no-print-directory -C '.makepath.' tags &'
 endif
 
 for s:c in ['a', 'A', '<Insert>', 'i', 'I', 'gI', 'gi', 'o', 'O']
@@ -316,4 +298,4 @@ nmap <silent><space>a  <Plug>(coc-codeaction)
 autocmd BufWinEnter *.cpp execute 'silent !cp ~/.vim/coc-settings-cpp.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 autocmd BufWinEnter *.c execute 'silent !cp ~/.vim/coc-settings-c.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 
-hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2
+hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2 
