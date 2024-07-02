@@ -1,4 +1,4 @@
-"coc-clangd //works best whit clangd3 and universal-ctags
+and"coc-clangd //works best whit clangd, universal-ctags and ack
 "coc-explorer
 "coc-highlight
 "coc-prettier
