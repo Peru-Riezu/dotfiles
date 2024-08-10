@@ -295,7 +295,7 @@ nmap <silent><space>ca <Plug>(coc-codelens-action)
 vmap <silent><space>a  <Plug>(coc-codeaction-selected)
 nmap <silent><space>a  <Plug>(coc-codeaction)
 
-autocmd BufWinEnter *.cpp execute 'silent !cp ~/.vim/coc-settings-cpp.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
-autocmd BufWinEnter *.c execute 'silent !cp ~/.vim/coc-settings-c.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
+autocmd BufWinEnter *.cpp,*.hpp execute 'silent !cp ~/.vim/coc-settings-cpp.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
+autocmd BufWinEnter *.c,*.h execute 'silent !cp ~/.vim/coc-settings-c.json ~/.vim/coc-settings.json' | execute 'silent CocRestart'
 
 hi CocFadeOut term=underline cterm=underline gui=underline guisp=#ebdbb2 
