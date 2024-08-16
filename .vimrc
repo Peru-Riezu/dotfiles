@@ -1,4 +1,4 @@
-"coc-clangd //works best whit clangd, universal-ctags and ack
+"coc-clangd //works best whit clangd3 and universal-ctags
 "coc-explorer
 "coc-highlight
 "coc-prettier
@@ -19,7 +19,7 @@ set shiftwidth=4
 set wildignore=*.pdf,*.swp
 set tags=tags;/
 
-function SetMkpath()
+fun! GetMkpath()
   let filemk = "Makefile"
   let pathmk = "./"
   let depth = 1
@@ -34,7 +34,7 @@ function SetMkpath()
 endf
 
 if !empty(findfile('tags', '.;'))
-	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h let makepath=SetMkpath() | execute 'silent !make --no-print-directory -C '.makepath.' tags &'
+	autocmd BufWritePost *.cpp,*.hpp,*.c,*.h execute 'silent !make --no-print-directory -C '.GetMkpath().' tags &'
 endif
 
 for s:c in ['a', 'A', '<Insert>', 'i', 'I', 'gI', 'gi', 'o', 'O']
@@ -57,11 +57,11 @@ hi CocFloatThumb ctermbg=grey
 hi CocFloatSbar  ctermbg=white
 
 call plug#begin('~/.vim/plugged')
-Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 autocmd VimEnter * call SetupLightlineColors()
