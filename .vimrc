@@ -1,7 +1,8 @@
-"coc-clangd //works best whit clangd3 and universal-ctags
+"coc-clangd //works best whit clangd and universal-ctags
 "coc-explorer
 "coc-highlight
 "coc-prettier
+"needs ack
 
 set autochdir
 set undofile
@@ -60,7 +61,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'mileszs/ack.vim'
 call plug#end()
 
