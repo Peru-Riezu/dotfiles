@@ -115,12 +115,6 @@ fi
 set -o vi
 alias seergdb="QT_SCALE_FACTOR=0.80 seergdb"
 
-export PATH="$PATH:/usr/local/lib/flutter/bin"
-export PATH="$PATH:/usr/lib/stremio-shell/build"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export CHROME_EXECUTABLE="chromium"
-
-export CPATH="$CPATH:/usr/local/include/botan-3"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
