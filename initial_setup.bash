@@ -1,12 +1,14 @@
 #simple script to install the software and configuration I usually use, in a freshly installed debian-13 system. Remember to check the latest verision of llvm so you work with the latest and greatest.
 cp IBMPlexMono/*.ttf ~/.local/share/fonts
-cp -r .config ~
-cp -r .vim ~
-cp .vimrm ~
-cp .bashrc ~
-cp .clang-tidy ~
-cp .clang-format ~
-cp .gitconfig ~
+cp -r .config /home/user/
+cp -r .vim /home/user/
+cp .vimrc /home/user/
+cp .bashrc /home/user/
+cp .clang-tidy /home/user/ 
+cp .clang-format /home/user/
+cp .gitconfig /home/user/
+
+sudo chown -R user .vim/ .config/ .local/ .clang-format .gitconfig .clang-tidy .bashrc .vimrc
 
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 sudo apt install vim git make gcc gdb seergdb sqlfluff nodejs python3 npm pip postgresql ack universal-ctags vim-gtk3 docker* clang*-20 llvm*-20 virt-manager fastfetch htop tree cowsay fortune figlet ssh sudo xfce4-terminal liburing-dev flatpak wget telnet curl -y
@@ -18,7 +20,8 @@ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.g
     | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 echo -e 'Types: deb\nURIs: https://download.vscodium.com/debs\nSuites: vscodium\nComponents: main\nArchitectures: amd64 arm64\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' \
 | sudo tee /etc/apt/sources.list.d/vscodium.sources
-sudo apt install codium
+sudo apt update
+sudo apt install codium -y
 
 #this part installs mullvad
 sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
@@ -36,8 +39,19 @@ sudo apt install pgadmin4-desktop -y
 
 #this part installs stremio
 wget https://dl.flathub.org/repo/appstream/com.stremio.Stremio.flatpakref
-yes | sudo flatpak install com.stremio.Stremio.flatpakref
+sudo flatpak install com.stremio.Stremio.flatpakref -y
 
+sudo bash ./clang-update-alternatives.sh
 
-#next: install vimium and ublock orgin on brave, configure vim, exfc4-terminal etc...
+sudo apt update
+sudo apt upgrade -y
+
+#next: install vimium and ublock orgin on brave, configure vim, swap esc with block mayus, install hide top bar and nigth mode extensions etc...
+#https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm
+#https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb
+#https://chromewebstore.google.com/detail/rester/eejfoncpjfgmeleakejdcanedmefagga
+#https://chromewebstore.google.com/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+#https://extensions.gnome.org/extension/2236/night-theme-switcher/
+#https://extensions.gnome.org/extension/545/hide-top-bar/
+#https://www.google.com/search?q=%s&udm=14  <- set this as the search engine maybe
 #but overall... have fun, be happy

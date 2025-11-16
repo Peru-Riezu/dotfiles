@@ -1,13 +1,4 @@
-"coc-clangd //works best whit clangd and universal-ctags
-"coc-explorer
-"coc-highlight
-"coc-prettier
-"coc-html
-"coc-css
-"coc-tsserver
-"coc-json
-"CocInstall coc-explorer coc-highlight coc-prettier coc-clangd coc-html coc-css coc-tsserver coc-json coc-sql
-"config work best whi ack installed in the system
+"CocInstall coc-explorer coc-highlight coc-prettier coc-clangd coc-html coc-css coc-tsserver coc-json
 
 set autochdir
 set undofile
