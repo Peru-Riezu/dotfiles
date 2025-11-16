@@ -1,4 +1,13 @@
-#simple script to install all the software I usually use in a freshly installed debian-13 system, remember check the latest verision of llvm so you work with the latest and greatest
+#simple script to install the software and configuration I usually use, in a freshly installed debian-13 system. Remember to check the latest verision of llvm so you work with the latest and greatest.
+cp IBMPlexMono/*.ttf ~/.local/share/fonts
+cp -r .config ~
+cp -r .vim ~
+cp .vimrm ~
+cp .bashrc ~
+cp .clang-tidy ~
+cp .clang-format ~
+cp .gitconfig ~
+
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 sudo apt install vim git make gcc gdb seergdb sqlfluff nodejs python3 npm pip postgresql ack universal-ctags vim-gtk3 docker* clang*-20 llvm*-20 virt-manager fastfetch htop tree cowsay fortune figlet ssh sudo xfce4-terminal liburing-dev flatpak wget telnet curl -y
 sudo apt remove --purge gnome-terminal* gnome-console* -y
@@ -29,5 +38,6 @@ sudo apt install pgadmin4-desktop -y
 wget https://dl.flathub.org/repo/appstream/com.stremio.Stremio.flatpakref
 yes | sudo flatpak install com.stremio.Stremio.flatpakref
 
-#next: install fonts, install vimium and ublock orgin on brave, configure vim, exfc4-terminal etc...
+
+#next: install vimium and ublock orgin on brave, configure vim, exfc4-terminal etc...
 #but overall... have fun, be happy
