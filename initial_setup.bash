@@ -28,4 +28,5 @@ sudo apt install pgadmin4-desktop
 https://dl.flathub.org/repo/appstream/com.stremio.Stremio.flatpakref
 flatpak install com.stremio.Stremio.flatpakref
 
-#next: install vimium and ublock orgin on brave, configure vim, exfc4-terminal etc...
+#next: install fonts, install vimium and ublock orgin on brave, configure vim, exfc4-terminal etc...
+#but overall... have fun, be happy
