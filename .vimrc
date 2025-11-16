@@ -6,7 +6,7 @@
 "coc-css
 "coc-tsserver
 "coc-json
-"CocInstall coc-explorer coc-highlight coc-prettier coc-clangd coc-html coc-css coc-tsserver coc-json
+"CocInstall coc-explorer coc-highlight coc-prettier coc-clangd coc-html coc-css coc-tsserver coc-json coc-sql
 "config work best whi ack installed in the system
 
 set autochdir

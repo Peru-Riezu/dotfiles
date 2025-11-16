@@ -1,6 +1,3 @@
-#apt remove llvm-* clang-* clangd-* clang-format-* clang-tidy-* lldb-*
-#apt install llvm-20 clang-20 clangd-20 clang-format-20 clang-tidy-20 lldb-20 clang-tools-20
-
 update-alternatives --install \
         /usr/bin/llvm-config           llvm-config           /usr/bin/llvm-config-20 300
 update-alternatives --install \
