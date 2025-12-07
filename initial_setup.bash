@@ -11,7 +11,7 @@ cp .gitconfig /home/user/
 sudo chown -R user .vim/ .config/ .local/ .clang-format .gitconfig .clang-tidy .bashrc .vimrc
 
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo apt install vim git make gcc gdb seergdb sqlfluff nodejs python3 npm pip postgresql ack universal-ctags vim-gtk3 cmdline-tools android-sdk docker* clang*-20 llvm*-20 virt-manager fastfetch htop tree cowsay fortune figlet ssh sudo xfce4-terminal liburing-dev flatpak wget telnet curl -y
+sudo apt install vim git make gcc gdb seergdb sqlfluff nodejs python3 npm pip postgresql ack universal-ctags vim-gtk3 android-sdk android-sdk-helper docker* clang*-20 llvm*-20 virt-manager fastfetch htop tree cowsay fortune figlet ssh sudo xfce4-terminal liburing-dev flatpak wget telnet curl -y
 sudo apt remove --purge gnome-terminal* gnome-console* -y
 
 #this part installs vscodium.
